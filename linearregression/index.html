@@ -19,10 +19,8 @@ function drawBasic() {
       var data = new google.visualization.DataTable();
       data.addColumn('number', 'X');
       data.addColumn('number', 'Y');
-
-      data.addRows([
-        [49,124],[69,95],[89,71],[99,45],[109,18] 
-      ]);
+      var xyx=[[49,124],[69,95],[89,71],[99,45],[109,18]]
+      data.addRows(xyx);
 
       var options = {
         hAxis: {
@@ -30,7 +28,9 @@ function drawBasic() {
         },
         vAxis: {
           title: 'Y'
-        }
+        },
+        pointsVisible: true,
+        'legend': 'none'
       };
 
       var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
@@ -48,7 +48,7 @@ function drawBasic() {
 </head>
 <body>
 <p>The line graph for the given data set:</p><a href="samp.csv" target="blank">click to view the sample dataset</a>
-  <div id="chart_div" style="width: 100%; height: 50%;"></div>
+  <div id="chart_div" style="width: 50%; height: 50%; margin: 0 auto"></div>
 <input type="text" id="key"placeholder="Enter the value of x:">
 <button onclick="ca1()">Click to see the answer</button>
 
